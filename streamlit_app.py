@@ -285,28 +285,28 @@ if submit:
     c1, c2, c3 = st.columns([1.3, 1, 1])
     with c1:
         st.markdown(f"<div class='glass-panel' style='padding:18px'> <div style='display:flex;align-items:center;gap:12px'><div class='animal-card animal-turtle'>📊</div><div><div style='font-size:12px;color:#7f9aff'>Credit Score</div><div style='font-size:32px;font-weight:700'>{credit_score}</div></div></div>", unsafe_allow_html=True)
-        st.plotly_chart(build_gauge(credit_score / 900, 'Score Gauge', '#4efca1'), use_container_width=True)
+        st.plotly_chart(build_gauge(credit_score / 900, 'Score Gauge', '#4efca1'), width='stretch')
         st.markdown('</div>', unsafe_allow_html=True)
     with c2:
         st.markdown("<div class='glass-panel' style='padding:18px'><div style='font-size:12px;color:#7f9aff'>Risk Level</div>", unsafe_allow_html=True)
-        st.plotly_chart(build_bar_chart({'Debt Load': metrics['Debt Load'], 'Stability': metrics['Stability'], 'Approval': approval}), use_container_width=True)
+        st.plotly_chart(build_bar_chart({'Debt Load': metrics['Debt Load'], 'Stability': metrics['Stability'], 'Approval': approval}), width='stretch')
         st.markdown(build_progress('Approval Confidence', approval / 100, '#39f2be'), unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
     with c3:
         st.markdown("<div class='glass-panel' style='padding:18px'><div style='font-size:12px;color:#7f9aff'>Loan Approval Probability</div><div style='font-size:32px;font-weight:700'>{}%</div>".format(approval), unsafe_allow_html=True)
-        st.plotly_chart(build_gauge(approval / 100, 'Approval Gauge', '#7f8dff'), use_container_width=True)
+        st.plotly_chart(build_gauge(approval / 100, 'Approval Gauge', '#7f8dff'), width='stretch')
         st.markdown('</div>', unsafe_allow_html=True)
 
     # charts
     st.markdown('<div style="display:flex;gap:18px;margin-top:18px">', unsafe_allow_html=True)
     st.markdown('<div class="glass-panel" style="flex:1">', unsafe_allow_html=True)
     st.markdown('<h3 style="margin-top:0">Risk Drivers</h3>', unsafe_allow_html=True)
-    st.plotly_chart(build_bar_chart(breakdown_norm), use_container_width=True)
+    st.plotly_chart(build_bar_chart(breakdown_norm), width='stretch')
     st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="glass-panel" style="width:360px">', unsafe_allow_html=True)
     st.markdown('<h3 style="margin-top:0">Risk Distribution</h3>', unsafe_allow_html=True)
-    st.plotly_chart(build_pie_chart(breakdown_norm), use_container_width=True)
+    st.plotly_chart(build_pie_chart(breakdown_norm), width='stretch')
     st.markdown('</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 

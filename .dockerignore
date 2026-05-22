@@ -1,3 +1,14 @@
+__pycache__
+*.pyc
+*.pkl
+*.egg-info
+.env
+.vscode
+.DS_Store
+venv
+build
+dist
+__pycache__/
 __pycache__/
 *.pyc
 *.pyo
